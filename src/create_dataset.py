@@ -55,7 +55,7 @@ def main():
     # reorder by date
     full_data[1:] = sorted(full_data[1:], key=lambda entry: dt.strptime(entry[0], "%d/%m/%y"))
 
-    np.savetxt('{project_cwd}/resources/grasses_weather.csv', X=full_data, fmt="%s", delimiter=";")
+    np.savetxt(f"{project_cwd}/resources/grasses_weather.csv", X=full_data, fmt="%s", delimiter=";")
 
 
 if __name__ == '__main__':
