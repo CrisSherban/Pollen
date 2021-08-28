@@ -25,7 +25,7 @@ def extract_gramineae(poll):
     for line in poll:
         if 'Gramineae' in line:
             grasses.append([line[0], line[3]])
-    np.savetxt('resources/gram_fi.csv', grasses, delimiter=";", fmt="%s")
+    np.savetxt(f"{project_cwd}/resources/gram_fi.csv", grasses, delimiter=";", fmt="%s")
 
 
 def arr_to_dict(arr):
@@ -33,14 +33,11 @@ def arr_to_dict(arr):
 
 
 def main():
-    cwd = pathlib.Path.cwd()
-    project_cwd = cwd.parent
-
     poll = arr_to_dict(np.loadtxt(f"{project_cwd}/resources/poll_fi.csv", delimiter=';', dtype=object)[1:])
     prec = arr_to_dict(np.loadtxt(f"{project_cwd}/resources/prec_fi.csv", delimiter=';', dtype=object)[1:])
     temp = arr_to_dict(np.loadtxt(f"{project_cwd}/resources/temp_fi.csv", delimiter=';', dtype=object)[1:])
     anemo = arr_to_dict(np.loadtxt(f"{project_cwd}/resources/anemo_fi.csv", delimiter=';', dtype=object)[1:])
-    gramineae = arr_to_dict(np.loadtxt(f"{project_cwd}/resources/gram_fi.csv", delimiter=';', dtype=object)[1:])
+    gramineae = arr_to_dict(np.loadtxt(f"{project_cwd}/resources/grass_fi.csv", delimiter=';', dtype=object)[1:])
 
     insert_to_date_indexed(gramineae, prec)
     insert_to_date_indexed(gramineae, temp)
@@ -49,14 +46,16 @@ def main():
     full_data = [["INDEX", "CONC", "PREC", "TMAX", "TMIN", "VMIN", "DIR", "VMAX"]]
     for index, el in enumerate(gramineae):
         full_data.append([el] + gramineae[el])
-        if index == 50:
+        if index == 5:
             print(full_data)
 
     # reorder by date
     full_data[1:] = sorted(full_data[1:], key=lambda entry: dt.strptime(entry[0], "%d/%m/%y"))
 
-    np.savetxt(f"{project_cwd}/resources/grasses_weather.csv", X=full_data, fmt="%s", delimiter=";")
+    np.savetxt(f"{project_cwd}/datasets/grasses_weather.csv", X=full_data, fmt="%s", delimiter=";")
 
 
 if __name__ == '__main__':
+    cwd = pathlib.Path.cwd()
+    project_cwd = cwd.parent
     main()
