@@ -11,19 +11,19 @@
 * [Acknowledgments](#acknowledgments)
 
 ## About The Project
-```Pollen``` is a project that aims at finding and understanding how pollen
-concentration is affected by weather. The main idea stands in the usage of Bayesian Networks
-that effectively explain out the relationships in the model.
-The dataset used is built thanks to information gathered from different sources such as 
+
+```Pollen``` is a project that aims at finding and understanding how pollen concentration is affected by weather. The
+main idea stands in the usage of Bayesian Networks that effectively explain out the relationships in the model. The
+dataset used is built thanks to information gathered from different sources such as
 [POLLNET](http://www.pollnet.it/default_it.asp)
-and [ilMeteo](https://www.ilmeteo.it/portale/archivio-meteo) for the city of Florence, Italy.
-In particular the following attributes are taken into consideration:  
+and [ilMeteo](https://www.ilmeteo.it/portale/archivio-meteo) for the city of Florence, Italy. In particular the
+following attributes are taken into consideration:
+
 * Wind
-* Wind Direction  
+* Wind Direction
 * Temperature
 * Pollen Concentration
 * Precipitations
-
 
 ## Prerequisites
 
@@ -66,15 +66,16 @@ Here's a brief description of the files and a directory tree:
     * network.ipynb: main file with documented outputs.
 </pre>    
 
-Output Network:  
+Output Network:
 
 <p align='center'>
   <img src="out/network.png" />
 </p>
 
 ## Results
-We can appreciate that we can now understand from the model that mid/high temperature
-is linked with an incresed concentration of grass pollen.
+
+We can appreciate that we can now understand from the model that mid/high temperature is linked with an incresed
+concentration of grass pollen.
 
 <p align='center'>
   <img src="out/inc_temp.png" />
