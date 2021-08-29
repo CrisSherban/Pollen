@@ -14,8 +14,15 @@
 ```Pollen``` is a project that aims at finding and understanding how pollen
 concentration is affected by weather. The main idea stands in the usage of Bayesian Networks
 that effectively explain out the relationships in the model.
-
-
+The dataset used is built thanks to information gathered from different sources such as 
+[POLLNET](http://www.pollnet.it/default_it.asp)
+and [ilMeteo](https://www.ilmeteo.it/portale/archivio-meteo) for the city of Florence, Italy.
+In particular the following attributes are taken into consideration:  
+* Wind
+* Wind Direction  
+* Temperature
+* Pollen Concentration
+* Precipitations
 
 
 ## Prerequisites
@@ -48,33 +55,29 @@ pipenv install
 
 ## Usage
 
-Here's a brief description of the .py files:
+Here's a brief description of the files and a directory tree:
+<pre>
+* datasets      (directory for datasets ) 
+* out           (directory containing output graphs )
+* resources     (directory containing )
+* src
+    * creates_dataset.py: creates dataset from files in resources directory.
+    * get_pol.py: selenium scraper that downloads pollen concentration from Pollnet.
+    * network.ipynb: main file with documented outputs.
+</pre>    
 
-* ```kernel.py```: Class that represents a kernel, thus provides a kernel function
-* ```svm.py```: SVM class, provides fit() and predict() methods.
-* ```main.py```: Verifies that the SVM class works, loads the dataset and shows the result with various kernels.
-* ```test_svm.py```: Contains a simple unit test on the SVM class by fitting and predicting over the MNIST dataset.
-* ```tools.dataset_tools.py```: Provides the loading, preprocessing, and splitting of the personal EEG dataset.
-* ```tools.validation_tools.py```: Provides functions to predict using several SVMs, and cross validate.
-
-To run the ```main.py``` script just run from the project directory:
-
-```sh
-python main.py
-```
-
-Along fitting several SVMs and show results, it will also show how a sample of the dataset looks like after bandpass and
-standardization.
+Output Network:  
 
 <p align='center'>
-  <img src="pictures/eeg_sample.png" />
+  <img src="out/network.png" />
 </p>
 
 ## Results
+We can appreciate that we can now understand from the model that mid/high temperature
+is linked with an incresed concentration of grass pollen.
 
-As we can appreciate, the RBF kernel in this situation with default parameters is the one that performs best:
 <p align='center'>
-  <img src="pictures/kernel_comparison.png" />
+  <img src="out/inc_temp.png" />
 </p>
 
 ## Authors
@@ -83,4 +86,4 @@ As we can appreciate, the RBF kernel in this situation with default parameters i
 
 ## Acknowledgments
 
-CDMO-2 © Course held by Professor [Vittorio Maniezzo](https://scholar.google.com/citations?user=pSalOJAAAAAJ&hl=en)
+FAIKR-3 © Course held by Professor [Paolo Torroni](https://scholar.google.com/citations?user=uOZZjwsAAAAJ&hl=en)
