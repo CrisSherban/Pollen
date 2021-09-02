@@ -1,4 +1,5 @@
 # Pollen
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/CrisSherban/Pollen/blob/master/src/network.ipynb)
 
 ## Table of Contents
 
