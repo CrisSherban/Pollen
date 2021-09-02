@@ -60,7 +60,7 @@ Here's a brief description of the files and a directory tree:
 <pre>
 * datasets      (directory for datasets ) 
 * out           (directory containing output graphs )
-* resources     (directory containing )
+* resources     (directory containing partial datasets and original files)
 * src
     * creates_dataset.py: creates dataset from files in resources directory.
     * get_pol.py: selenium scraper that downloads pollen concentration from Pollnet.
