@@ -26,6 +26,8 @@ following attributes are taken into consideration:
 * Pollen Concentration
 * Precipitations
 
+Check more in the Report [HERE](/Report.pdf).
+
 ## Prerequisites
 
 To get a local copy up and running follow these simple steps.
